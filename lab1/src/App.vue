@@ -83,7 +83,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     align-items:flex-start;
-    gap: 9% 4%;
+    gap: 10% 4%;
   }
 
   .grid-item{
