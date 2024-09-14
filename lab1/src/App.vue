@@ -20,30 +20,39 @@
     <div class="grid-container">
       <div class="grid-item item1">
         <img class="image im1" src="./assets/1.jpg" alt="mountain">
+        <div class="opac"></div>
         <div class="text">The AI magically removes moving objects from the video <br>
           <span>July 19, 2019</span>
         </div>
       </div>
       <div class="grid-item item2">
-        <img class="image im2" src="./assets/2.jpg" alt="sunset">
+        <img class="image im2" src="./assets/1.jpg" alt="sunset">
+        <div class="opac"></div>
         <div class="text">The AI magically removes moving objects from the video <br>
           <span>July 19, 2019</span>
         </div>
       </div>
       <div class="grid-item item3">
         <img class="image im3" src="./assets/3.jpg" alt="river">
+        <div class="opac"></div>
+        <div>
+          <span class="upper-text1">Travel</span>
+          <span class="upper-text2">Food</span>
+        </div>
         <div class="text">The AI magically removes moving objects from the video <br>
           <span>July 19, 2019</span>
         </div>
       </div>
       <div class="grid-item item4">
-        <img class="image im4" src="./assets/4.jpg" alt="view">
+        <img class="image im4" src="./assets/1.jpg" alt="view">
+        <div class="opac"></div>
         <div class="text">The 20 Biggest Fintech Companies in America 2019<br>
           <span>July 19, 2019</span>
         </div>
       </div>
       <div class="grid-item item5">
-        <img class="image im5" src="./assets/5.jpg" alt="scyscraper">
+        <img class="image im5" src="./assets/1.jpg" alt="scyscraper">
+        <div class="opac"></div>
         <div class="text">The 20 Biggest Fintech Companies in America 2019<br>
           <span>July 19, 2019</span>
         </div>
@@ -57,12 +66,13 @@
 <style scoped>
 
   .image{
-    max-height: 450px;
-    max-width: 350px;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
   }
 
   .im3{
-    max-height: fit-content;
+    max-height:100%;
   }
 
   .item3{
@@ -72,8 +82,8 @@
   .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    align-items:end;
-    gap: 20px;
+    align-items:flex-start;
+    gap: 9% 4%;
   }
 
   .grid-item{
@@ -81,9 +91,39 @@
     text-align: left;
   }
 
+  .opac{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width:100%;
+    height:60%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  }
+
+  .upper-text1{
+    position: absolute;
+    bottom: 120px;
+    left: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 15%;
+    font-weight: 500;
+    padding: 5px 7px;
+  }
+  .upper-text2{
+    position: absolute;
+    bottom: 120px;
+    left: 80px;
+    color: white;
+    background-color: blue;
+    border-radius: 15%;
+    font-weight: 500;
+    padding: 5px 11px;
+  }
+
   .text{
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 10px;
     color: rgb(135, 255, 255);
   }
@@ -99,6 +139,8 @@
 
   main{
     margin-top: 5em;
+    padding-left: 6em;
+    padding-right: 6em;
   }
 
   nav{
@@ -112,7 +154,7 @@
   }
 
   .link{
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 1.2em;
   }
 
