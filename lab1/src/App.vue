@@ -71,10 +71,6 @@
     display: block;
   }
 
-  .im3{
-    max-height:100%;
-  }
-
   .item3{
     grid-area: 1/2/3/3;
   }
@@ -82,13 +78,14 @@
   .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    align-items:center;
-    gap: 10% 4%;
+    gap: 9% 4%;
+    align-items: stretch;
   }
 
   .grid-item{
     position: relative;
     text-align: left;
+    
   }
 
   .opac{
@@ -97,7 +94,7 @@
     bottom:0;
     width:100%;
     height:60%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   }
 
   .upper-text1{
@@ -108,17 +105,21 @@
     background-color: red;
     border-radius: 15%;
     font-weight: 500;
-    padding: 5px 7px;
+    width: 4em;
+    padding: 3px 0;
+    text-align: center;
   }
   .upper-text2{
     position: absolute;
     bottom: 120px;
-    left: 80px;
+    left: 85px;
     color: white;
     background-color: blue;
     border-radius: 15%;
     font-weight: 500;
-    padding: 5px 11px;
+    width: 4em;
+    padding: 3px 0;
+    text-align: center;
   }
 
   .text{
