@@ -82,7 +82,7 @@
   .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    align-items:flex-start;
+    align-items:center;
     gap: 10% 4%;
   }
 
