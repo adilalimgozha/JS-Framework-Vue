@@ -1,10 +1,12 @@
 <script setup>
-
+    const props = defineProps({
+        menuBarOpen: Function
+    })
 </script>
 
 <template>
     <header>
-        <button className="menu"><img className="menu-img" src="../assets/menu.png" alt="menu"></button>
+        <img @click="menuBarOpen()" className="menu-img" src="../assets/menu.png" alt="menu">
         <div>
             <span>New tips on Fall season! Full details on our Instagram accounts</span>
         </div>
@@ -58,29 +60,15 @@
         opacity: 0.9;
     }*/
 
-    .menu{
-        border-radius: 2em;
-        width: 4em;
-        height: 4em;
-        background: #7EEFFF;
-        border: none;
-        cursor: pointer;
-        margin-left: 1.1em;
-    }
-
-    .menu:hover{
-        background: #08b5cc;
-        transition: 0.5s;
-    }
-
     .menu-img{
-        position: relative;
         left: -0.4em;
+        cursor: pointer;
+        margin-left: 1.2em;
     }
 
     /*.menu-img:hover{
         transform: scale(1.1);
-        opacity: 0.9;
+        transition: 0.5s;
     }*/
 
 

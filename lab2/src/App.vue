@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import Person from './components/Person.vue';
 import DateComp from './components/DateComp.vue';
 import SecondFloor from './components/SecondFloor.vue';
+import Menu from './components/Menu.vue';
 
 
 const persons = ref([
@@ -189,12 +190,25 @@ function nextPage(){
     return page.value++
 }
 
+const isMenuBarOpen = ref(false)
+
+function menuBarOpen(){
+    isMenuBarOpen.value = true
+}
+
+function menuBarClose(){
+    isMenuBarOpen.value = false
+}
+
     
 </script>
 
 <template>
     <div className="all">
-        <Header></Header> 
+        <Menu v-if="isMenuBarOpen == true" :menuBarClose="menuBarClose"></Menu>
+        
+        <Header :menuBarOpen="menuBarOpen"></Header> 
+
         <div className="content">
             <DateComp :showDate="showDate"></DateComp>
             <SecondFloor :maxPage="maxPage" :page="page" :nextPage="nextPage"></SecondFloor>
