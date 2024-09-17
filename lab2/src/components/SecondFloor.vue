@@ -1,7 +1,9 @@
 <script setup>
 
 const props = defineProps({
-    nextPage: Number
+    page: Number,
+    nextPage: Number,
+    maxPage: Number
 })
 
 </script>
@@ -18,7 +20,7 @@ const props = defineProps({
         </div>
         <div className="arrow">
             <img @click="nextPage" class="img arrow-img" src="../assets/arrow.png" alt="arrow">
-            <div className="number">1/5</div>
+            <div className="number">{{page}}/{{maxPage}}</div>
         </div>
     </div>
 </template>

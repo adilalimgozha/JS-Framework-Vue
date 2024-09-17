@@ -22,14 +22,14 @@ const persons = ref([
         Commentary: "This is awesome adventure that I had! Thanks!",
         Topic: "engtnbr" },
         { id: 3,
-        PersonName: "Peter Parker",
+        PersonName: "Max Max",
         Avatar: "ava1.png",
         PubDate: 'Today, 16:00',
         Rating: 4,
         Commentary: "This is awesome adventure that I had! Thanks!",
         Topic: "engtnbr" },
         { id: 4,
-        PersonName: "Peter Parker",
+        PersonName: "Suna Suna",
         Avatar: "ava1.png",
         PubDate: 'Today, 16:00',
         Rating: 10,
@@ -37,6 +37,132 @@ const persons = ref([
         Topic: "engtnbr" },
         { id: 5,
         PersonName: "Bror Bror",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 6,
+        PersonName: "Robert Robert",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 7,
+        PersonName: "Alish Alish",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 8,
+        PersonName: "Annie Annie",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 9,
+        PersonName: "Erke Erke",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 10,
+        PersonName: "Ali Ali",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 11,
+        PersonName: "Nurik Nurik",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 12,
+        PersonName: "Adil Adil",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 13,
+        PersonName: "Ulan Ulan",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 14,
+        PersonName: "Kirill Kirill",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 15,
+        PersonName: "Nikita Nikita",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 16,
+        PersonName: "Zhasik Zhasik",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 17,
+        PersonName: "Tima Tima",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 18,
+        PersonName: "Saba Saba",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 19,
+        PersonName: "Damir Damir",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 20,
+        PersonName: "Dima Dima",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 21,
+        PersonName: "Dima Dima",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 22,
+        PersonName: "Dima Dima",
+        Avatar: "ava1.png",
+        PubDate: 'Today, 20:00',
+        Rating: 10,
+        Commentary: "This is awesome adventure that I had! Thanks!",
+        Topic: "engtnbr" },
+        { id: 23,
+        PersonName: "Saba Saba",
         Avatar: "ava1.png",
         PubDate: 'Today, 20:00',
         Rating: 10,
@@ -53,10 +179,15 @@ function showDate(){
     return `${date}.${month}.${year}`
 }
 
-function nextPage(){
-    return
-}
+const page = ref(1)
+const maxPage = ref(Math.ceil(persons.value.length / 4))
 
+function nextPage(){
+    if (page.value == maxPage.value){
+        return
+    }
+    return page.value++
+}
 
     
 </script>
@@ -66,9 +197,10 @@ function nextPage(){
         <Header></Header> 
         <div className="content">
             <DateComp :showDate="showDate"></DateComp>
-            <SecondFloor></SecondFloor>
-            <div className="grid-container">
-                <Person v-for="el in persons" 
+            <SecondFloor :maxPage="maxPage" :page="page" :nextPage="nextPage"></SecondFloor>
+
+            <div v-if="page <= maxPage" :key="index" className="grid-container">
+                <Person v-for="el in persons.slice((page-1) * 4, page * 4)" 
                 :key="el.id" 
                 :id="el.id" 
                 :PersonName="el.PersonName"
@@ -77,6 +209,7 @@ function nextPage(){
                 :Rating="el.Rating"
                 :Commentary="el.Commentary"
                 :Topic="el.Topic"></Person>
+
             </div>
         </div>
     </div>
