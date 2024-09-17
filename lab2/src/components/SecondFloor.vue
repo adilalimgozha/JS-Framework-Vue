@@ -3,7 +3,8 @@
 const props = defineProps({
     page: Number,
     nextPage: Number,
-    maxPage: Number
+    maxPage: Number,
+    topic: String
 })
 
 </script>
@@ -11,7 +12,7 @@ const props = defineProps({
 <template>
     <div className="second-fl">
         <div className="blogName">
-            <div className="name-word">Adventure</div>
+            <div className="name-word">{{topic}}</div>
         </div>
         <div className="rating">
             <span><img className="img filter-img" src="../assets/filter.png" alt="filter"></span>

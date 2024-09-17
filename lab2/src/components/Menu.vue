@@ -1,7 +1,12 @@
 <script setup>
 
     const props = defineProps({
-        menuBarClose: Function
+        menuBarClose: Function,
+        toAdventure: Function,
+        toNature: Function,
+        toFashion: Function,
+        toModern: Function,
+        toEducation: Function,
     })
 
 </script>
@@ -12,11 +17,11 @@
         <button @click="menuBarClose()" className="button menu-btn">Menu</button>
         <div className="nav-contacts">
             <div className="nav">
-                <button className="button adv-btn">Adventure Blog</button>
-                <button className="button nat-btn">Nature Blog</button>
-                <button className="button fas-btn">Fashion Blog</button>
-                <button className="button mod-btn">Modern Blog</button>
-                <button className="button edu-btn">Education Blog</button>
+                <button @click="toAdventure()" className="button adv-btn">Adventure Blog</button>
+                <button @click="toNature()" className="button nat-btn">Nature Blog</button>
+                <button @click="toFashion()" className="button fas-btn">Fashion Blog</button>
+                <button @click="toModern()" className="button mod-btn">Modern Blog</button>
+                <button @click="toEducation()" className="button edu-btn">Education Blog</button>
             </div>
             <div className="contacts">
                 <div className="contacts-word">Contacts</div>

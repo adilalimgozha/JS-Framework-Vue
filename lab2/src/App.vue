@@ -182,6 +182,23 @@ function showDate(){
 
 const page = ref(1)
 const maxPage = ref(Math.ceil(persons.value.length / 4))
+const topic = ref("Adventure")
+
+function toAdventure(){
+    topic.value = "Adventure"
+}
+function toNature(){
+    topic.value = "Nature"
+}
+function toFashion(){
+    topic.value = "Fashion"
+}
+function toModern(){
+    topic.value = "Modern"
+}
+function toEducation(){
+    topic.value = "Education"
+}
 
 function nextPage(){
     if (page.value == maxPage.value){
@@ -205,13 +222,19 @@ function menuBarClose(){
 
 <template>
     <div className="all">
-        <Menu v-if="isMenuBarOpen == true" :menuBarClose="menuBarClose"></Menu>
+        <Menu v-if="isMenuBarOpen == true" 
+        :toAdventure="toAdventure" 
+        :toNature="toNature" 
+        :toFashion="toFashion" 
+        :toModern="toModern"
+        :toEducation="toEducation"
+        :menuBarClose="menuBarClose"></Menu>
         
         <Header :menuBarOpen="menuBarOpen"></Header> 
 
         <div className="content">
             <DateComp :showDate="showDate"></DateComp>
-            <SecondFloor :maxPage="maxPage" :page="page" :nextPage="nextPage"></SecondFloor>
+            <SecondFloor :topic="topic" :maxPage="maxPage" :page="page" :nextPage="nextPage"></SecondFloor>
 
             <div v-if="page <= maxPage" :key="index" className="grid-container">
                 <Person v-for="el in persons.slice((page-1) * 4, page * 4)" 
