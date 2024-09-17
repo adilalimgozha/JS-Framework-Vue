@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 
 const props = defineProps({
     id: Number,
@@ -9,6 +10,13 @@ const props = defineProps({
     Commentary: String,
     Topic: String
 })
+
+const rate = ref(props.Rating)
+
+function liked(){
+    rate.value+= 1
+}
+
 
 </script>
 
@@ -22,13 +30,22 @@ const props = defineProps({
             </div>
 
             <div className="rating">
-                <div classname="rating-word">Rating</div>
-                <div calssname="stars">
-                    <img classname="star" src="../assets/star-yellow.png" alt="star">
-                    <img classname="star" src="../assets/star-white.png" alt="star">
-                    <img classname="star" src="../assets/star-white.png" alt="star">
-                    <img classname="star" src="../assets/star-white.png" alt="star">
-                    <img classname="star" src="../assets/star-white.png" alt="star">  
+                <div calssName="rating-word">Rating</div>
+                <div className="stars">
+                    <img v-if="rate < 3" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 3" className="star" src="../assets/star-yellow.png" alt="star">
+
+                    <img v-if="rate < 6" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 6" className="star" src="../assets/star-yellow.png" alt="star">
+
+                    <img v-if="rate < 9" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 9" className="star" src="../assets/star-yellow.png" alt="star">
+
+                    <img v-if="rate < 12" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 12" className="star" src="../assets/star-yellow.png" alt="star">
+
+                    <img v-if="rate < 15" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 15" className="star" src="../assets/star-yellow.png" alt="star">
                 </div>
             </div>
 
@@ -39,7 +56,7 @@ const props = defineProps({
         <div>{{ Commentary }}</div>
 
         <div className="btn">
-            <button className="like">Like</button>
+            <button className="like" @click="liked()">Like</button>
         </div>
 
     </div>
@@ -49,14 +66,14 @@ const props = defineProps({
 <style scoped>
 
     .card{
-        width: 50%;
+        width: 70%;
         border-radius: 1.1em;
         color: white;
         background: #5BB9CD;
         padding: 1%;
-        font-size: 1.1em;
+        font-size: 1.3em;
         font-weight:bold;
-        margin: 2em;
+        margin: 2em 4.5em;
     }
 
     .card-top{
@@ -110,10 +127,21 @@ const props = defineProps({
     .like:hover{
         background-color: rgb(36, 149, 30);
     }
+    
+    .like:active{
+        background-color: #3e8e41;
+        box-shadow: 0 5px #727272;
+        transform: translateY(2px);
+    }
 
     .btn{
         text-align: right;
         margin-right: 2%;
+    }
+
+    .star{
+        margin: 0 0.3em;
+        width: 1.2em;
     }
 
 </style>

@@ -19,7 +19,7 @@
         font-weight: 700;
         font-size: 1.3em;
         background: #FFFFFFBD;
-        margin-top: 2%;
+        margin-top: 1%;
         align-items: center;
     }
 
@@ -36,6 +36,7 @@
         padding: 0.9em;
         border-radius: 0.9em;
         text-align: center;
+        margin: 0.5em 0;
     }
 
     .profile{
