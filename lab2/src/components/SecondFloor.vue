@@ -1,10 +1,19 @@
 <script setup>
 
+import { computed, ref } from 'vue';
+
 const props = defineProps({
     page: Number,
-    nextPage: Number,
+    nextPage: Function,
     maxPage: Number,
-    topic: String
+    topic: String,
+    filterBy: String,
+    isFilterClicked: Boolean,
+    filterClickOpen: Function,
+    filterClickClose: Function,
+    toRating: Function,
+    toDate: Function,
+    filterDecision: Function
 })
 
 </script>
@@ -14,26 +23,57 @@ const props = defineProps({
         <div className="blogName">
             <div className="name-word">{{topic}}</div>
         </div>
-        <div className="rating">
-            <span><img className="img filter-img" src="../assets/filter.png" alt="filter"></span>
-            <span className="rating-word">Rating</span>
-            <span><img className="img filter-btn-img" src="../assets/filter_btn.png" alt="filter_btn"></span>
+        <div className="grid-container1">
+            <div className="rating">
+                <span><img v-if="isFilterClicked == false" @click="filterDecision()" className="img filter-img" src="../assets/filter.png" alt="filter"></span>
+                <span className="rating-word">{{filterBy}}</span>
+                <span><img @click="filterClickOpen()" className="img filter-btn-img" src="../assets/filter_btn.png" alt="filter_btn"></span>
+            </div>
+            <div className="grid-container2">
+                <button v-if="isFilterClicked == true" @click="filterClickClose(), toRating()" className="pickFilter">Rating</button>
+                <button v-if="isFilterClicked == true" @click="filterClickClose(), toDate()" className="pickFilter">DateTime</button>
+            </div>
         </div>
         <div className="arrow">
-            <img @click="nextPage" class="img arrow-img" src="../assets/arrow.png" alt="arrow">
+            <img @click="nextPage()" class="img arrow-img" src="../assets/arrow.png" alt="arrow">
             <div className="number">{{page}}/{{maxPage}}</div>
         </div>
     </div>
 </template>
 
 <style scoped>
+
+    button{
+        border: none;
+        background-color: beige;
+        border: white solid;
+    }
+
+    .pickFilter{
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .grid-container1{
+        height: 6em;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .grid-container2{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     .second-fl{
         display: flex;
+        align-items: center;
         justify-content: space-between;
         margin: 6em;
     }
 
     .blogName{
+
         font-size: 4em;
         background: #5BB9CD;
         border-radius: 10px;
@@ -41,6 +81,7 @@ const props = defineProps({
         align-items: center;
         color: white;
         width: 30%;
+        height: 100%;
         font-weight: bold;
     }
 

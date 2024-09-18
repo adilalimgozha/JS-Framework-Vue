@@ -14,7 +14,7 @@ const props = defineProps({
 const rate = ref(props.Rating)
 
 function liked(){
-    rate.value+= 1
+    rate.value += 1
 }
 
 

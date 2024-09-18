@@ -7,6 +7,11 @@
         toFashion: Function,
         toModern: Function,
         toEducation: Function,
+        onlyAdventure: Function,
+        onlyNature: Function,
+        onlyFashion: Function,
+        onlyModern: Function,
+        onlyEducation: Function,
     })
 
 </script>
@@ -17,11 +22,11 @@
         <button @click="menuBarClose()" className="button menu-btn">Menu</button>
         <div className="nav-contacts">
             <div className="nav">
-                <button @click="toAdventure()" className="button adv-btn">Adventure Blog</button>
-                <button @click="toNature()" className="button nat-btn">Nature Blog</button>
-                <button @click="toFashion()" className="button fas-btn">Fashion Blog</button>
-                <button @click="toModern()" className="button mod-btn">Modern Blog</button>
-                <button @click="toEducation()" className="button edu-btn">Education Blog</button>
+                <button @click="toAdventure(), menuBarClose(), onlyAdventure()" className="button adv-btn">Adventure Blog</button>
+                <button @click="toNature(), menuBarClose(), onlyNature()" className="button nat-btn">Nature Blog</button>
+                <button @click="toFashion(), menuBarClose(), onlyFashion()" className="button fas-btn">Fashion Blog</button>
+                <button @click="toModern(), menuBarClose(), onlyModern()" className="button mod-btn">Modern Blog</button>
+                <button @click="toEducation(), menuBarClose(), onlyEducation()" className="button edu-btn">Education Blog</button>
             </div>
             <div className="contacts">
                 <div className="contacts-word">Contacts</div>
