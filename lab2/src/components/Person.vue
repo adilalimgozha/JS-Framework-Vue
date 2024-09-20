@@ -5,16 +5,48 @@ const props = defineProps({
     id: Number,
     PersonName: String,
     Avatar: String,
-    PubDate: String,
+    PubDate: Date,
     Rating: Number,
     Commentary: String,
-    Topic: String
+    Topic: String,
+    today: Date
 })
 
+// Увеличение рейтинга (макс. 15)
 const rate = ref(props.Rating)
-
 function liked(){
     rate.value += 1
+}
+
+// Написание текста о дате в зависимости от разницы с сегодняшней датой
+const pub_date = ref("")
+
+const day = ref(props.PubDate.getDate())
+const month = ref(props.PubDate.getMonth())
+const year = ref(props.PubDate.getFullYear())
+const hours = ref(props.PubDate.getHours())
+const minutes = ref(props.PubDate.getMinutes())
+
+const todayDay = ref(props.today.getDate())
+const todayMonth = ref(props.today.getMonth() + 1)
+const todayYear = ref(props.PubDate.getFullYear())
+
+if (day.value == todayDay.value && month.value == todayMonth.value && year.value == todayYear.value) {
+    pub_date.value = `Today, ${hours.value}:${minutes.value}`
+} else if ((day.value + 1 == todayDay.value && month.value == todayMonth.value && year.value == todayYear.value)) {
+    pub_date.value = `Yesterday, ${hours.value}:${minutes.value}`
+} else {
+    for (let i = 1; i <= 12; i++) {
+        if (todayMonth.value == month.value + i){
+            pub_date.value = `${i} month(s) ago, ${hours.value}:${minutes.value}`
+            break
+        }
+        for (let j = 2; j <= 30; j++) {
+            if (todayDay.value == day.value + j) {
+                pub_date.value = `${j-1} day(s) ago, ${hours.value}:${minutes.value}`
+            }
+        }
+    }
 }
 
 
@@ -26,7 +58,7 @@ function liked(){
         <div className="card-top">
             <div className="info">
                 <div className="name">{{ PersonName }}</div>
-                <div className="date">{{ PubDate }}</div>
+                <div className="date">{{ pub_date }}</div>
             </div>
 
             <div className="rating">
