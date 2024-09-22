@@ -220,7 +220,7 @@ function menuBarOpen(){
 
 function menuBarClose(){
     isMenuBarOpen.value = false
-} 
+}
 
 
 // Фильтрация людей с определенной темой блога
