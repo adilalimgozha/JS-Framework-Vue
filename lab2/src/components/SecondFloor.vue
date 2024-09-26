@@ -13,13 +13,18 @@ const props = defineProps({
     filterClickClose: Function,
     toRating: Function,
     toDate: Function,
-    filterDecision: Function
+    filterDecision: Function,
+    prevPage: Function
 })
 
 </script>
 
 <template>
     <div className="second-fl">
+        <div className="arrow">
+            <img @click="prevPage()" class="img arrow-img" src="../assets/arrow_back.png" alt="arrow">
+            <div className="number">{{page}}/{{maxPage}}</div>
+        </div>
         <div className="blogName">
             <div className="name-word">{{topic}}</div>
         </div>

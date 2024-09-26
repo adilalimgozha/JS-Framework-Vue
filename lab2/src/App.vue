@@ -19,155 +19,155 @@ const persons = ref([
         { id: 2,
         PersonName: "Peter Parker",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 19, 14, 30),
+        PubDate: new Date(2024, 9, 19, 11, 30),
         Rating: 6,
         Commentary: "Nature",
         Topic: "Nature" },
         { id: 3,
         PersonName: "Max Max",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 19, 14, 30),
-        Rating: 3,
+        PubDate: new Date(2024, 9, 19, 12, 30),
+        Rating: 2,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 4,
         PersonName: "Suna Suna",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 19, 14, 30),
-        Rating: 12,
+        PubDate: new Date(2024, 9, 19, 13, 30),
+        Rating: 10,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 5,
         PersonName: "Bror Bror",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
+        PubDate: new Date(2024, 9, 17, 14, 40),
         Rating: 10,
         Commentary: "Nature",
         Topic: "Nature" },
         { id: 6,
         PersonName: "Robert Robert",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 9,
+        PubDate: new Date(2024, 9, 17, 15, 40),
+        Rating: 14,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 7,
         PersonName: "Alish Alish",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 10,
+        PubDate: new Date(2024, 9, 17, 16, 40),
+        Rating: 8,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 8,
         PersonName: "Annie Annie",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 3,
+        PubDate: new Date(2024, 9, 17, 17, 40),
+        Rating: 16,
         Commentary: "Modern",
         Topic: "Modern" },
         { id: 9,
         PersonName: "Erke Erke",
         Avatar: "ava1.png",
         PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 15,
+        Rating: 12,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 10,
         PersonName: "Ali Ali",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 8,
+        PubDate: new Date(2024, 9, 17, 19, 40),
+        Rating: 18,
         Commentary: "Adventure",
         Topic: "Adventure" },
         { id: 11,
         PersonName: "Nurik Nurik",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 10,
+        PubDate: new Date(2024, 9, 17, 20, 40),
+        Rating: 20,
         Commentary: "Education",
         Topic: "Education" },
         { id: 12,
         PersonName: "Adil Adil",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 9,
+        PubDate: new Date(2024, 9, 17, 21, 40),
+        Rating: 6,
         Commentary: "Fasion",
         Topic: "Fashion" },
         { id: 13,
         PersonName: "Ulan Ulan",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 5,
+        PubDate: new Date(2024, 9, 17, 22, 40),
+        Rating: 4,
         Commentary: "Fashion",
         Topic: "Fashion" },
         { id: 14,
         PersonName: "Kirill Kirill",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 15,
+        PubDate: new Date(2024, 9, 17, 23, 40),
+        Rating: 16,
         Commentary: "Fashion",
         Topic: "Fashion" },
         { id: 15,
         PersonName: "Nikita Nikita",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 12,
+        PubDate: new Date(2024, 9, 17, 11, 10),
+        Rating: 18,
         Commentary: "Modern",
         Topic: "Modern" },
         { id: 16,
         PersonName: "Zhasik Zhasik",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 7,
+        PubDate: new Date(2024, 9, 17, 12, 10),
+        Rating: 8,
         Commentary: "Fashion",
         Topic: "Fashion" },
         { id: 17,
         PersonName: "Tima Tima",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 17, 18, 40),
-        Rating: 8,
+        PubDate: new Date(2024, 9, 17, 13, 10),
+        Rating: 10,
         Commentary: "Modern",
         Topic: "Modern" },
         { id: 18,
         PersonName: "Saba Saba",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 18, 18, 40),
-        Rating: 15,
+        PubDate: new Date(2024, 9, 18, 14, 10),
+        Rating: 10,
         Commentary: "Education",
         Topic: "Education" },
         { id: 19,
         PersonName: "Damir Damir",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 18, 18, 40),
-        Rating: 13,
+        PubDate: new Date(2024, 9, 18, 15, 10),
+        Rating: 14,
         Commentary: "Nature",
         Topic: "Nature" },
         { id: 20,
         PersonName: "Dima Dima",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 18, 20, 40),
-        Rating: 6,
+        PubDate: new Date(2024, 9, 18, 16, 10),
+        Rating: 12,
         Commentary: "Nature",
         Topic: "Nature" },
         { id: 21,
         PersonName: "Alen Alen",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 16, 15, 10),
-        Rating: 3,
+        PubDate: new Date(2024, 9, 16, 17, 10),
+        Rating: 8,
         Commentary: "Nature",
         Topic: "Nature" },
         { id: 22,
         PersonName: "Madina Madina",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 16, 15, 10),
-        Rating: 3,
+        PubDate: new Date(2024, 9, 16, 21, 10),
+        Rating: 8,
         Commentary: "Education",
         Topic: "Education" },
         { id: 23,
         PersonName: "Alex Alex",
         Avatar: "ava1.png",
-        PubDate: new Date(2024, 9, 16, 15, 10),
-        Rating: 15,
+        PubDate: new Date(2024, 9, 16, 15, 45),
+        Rating: 6,
         Commentary: "Modern",
         Topic: "Modern" }
     ]);
@@ -208,6 +208,13 @@ function nextPage(){
         return
     }
     page.value++
+}
+
+function prevPage(){
+    if (page.value == 1){
+        return
+    }
+    page.value--
 }
 
 
@@ -275,18 +282,21 @@ function toRating(){
 }
 
 function toDate(){
-    filterBy.value = "DateTime";
+    filterBy.value = "PubDate";
 }
 
 function filterDecision(){
     if (filterBy.value == "Rating"){
         perses.value = sortedByRating.value
-    }else{
+    }else if (filterBy.value == "PubDate"){
         perses.value = sortedByDate.value
     }
+    console.log(filterBy.value)
+    console.log(isFilterClicked.value)
 }
+
 const sortedByRating = computed(() => _.sortBy(perses.value, 'Rating').reverse())
-const sortedByDate = computed(() => _.sortBy(perses.value, 'DateTime').reverse())
+const sortedByDate = computed(() => _.sortBy(perses.value, 'PubDate').reverse())
 
     
 </script>
@@ -320,7 +330,8 @@ const sortedByDate = computed(() => _.sortBy(perses.value, 'DateTime').reverse()
             :filterClickClose="filterClickClose"
             :toRating="toRating"
             :toDate="toDate"
-            :filterDecision="filterDecision"></SecondFloor>
+            :filterDecision="filterDecision"
+            :prevPage="prevPage"></SecondFloor>
 
             <div v-if="page <= maxPage" className="grid-container">
                 <Person v-for="el in perses.slice((page-1) * 4, page * 4)" 

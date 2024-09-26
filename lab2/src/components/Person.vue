@@ -64,20 +64,25 @@ if (day.value == todayDay.value && month.value == todayMonth.value && year.value
             <div className="rating">
                 <div calssName="rating-word">Rating</div>
                 <div className="stars">
-                    <img v-if="rate < 3" className="star" src="../assets/star-white.png" alt="star">
-                    <img v-else-if="rate >= 3" className="star" src="../assets/star-yellow.png" alt="star">
+                    <img v-if="rate < 2" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 2 && rate < 4" className="star" src="../assets/star-semi-yellow.png" alt="star">
+                    <img v-else-if="rate >= 4" className="star" src="../assets/star-yellow.png" alt="star">
 
                     <img v-if="rate < 6" className="star" src="../assets/star-white.png" alt="star">
-                    <img v-else-if="rate >= 6" className="star" src="../assets/star-yellow.png" alt="star">
+                    <img v-else-if="rate >= 6 && rate < 8" className="star" src="../assets/star-semi-yellow.png" alt="star">
+                    <img v-else-if="rate >= 8" className="star" src="../assets/star-yellow.png" alt="star">
 
-                    <img v-if="rate < 9" className="star" src="../assets/star-white.png" alt="star">
-                    <img v-else-if="rate >= 9" className="star" src="../assets/star-yellow.png" alt="star">
-
-                    <img v-if="rate < 12" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-if="rate < 10" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 10 && rate < 12" className="star" src="../assets/star-semi-yellow.png" alt="star">
                     <img v-else-if="rate >= 12" className="star" src="../assets/star-yellow.png" alt="star">
 
-                    <img v-if="rate < 15" className="star" src="../assets/star-white.png" alt="star">
-                    <img v-else-if="rate >= 15" className="star" src="../assets/star-yellow.png" alt="star">
+                    <img v-if="rate < 14" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 14 && rate < 16" className="star" src="../assets/star-semi-yellow.png" alt="star">
+                    <img v-else-if="rate >= 16" className="star" src="../assets/star-yellow.png" alt="star">
+
+                    <img v-if="rate < 18" className="star" src="../assets/star-white.png" alt="star">
+                    <img v-else-if="rate >= 18 && rate < 20" className="star" src="../assets/star-semi-yellow.png" alt="star">
+                    <img v-else-if="rate >= 20" className="star" src="../assets/star-yellow.png" alt="star">
                 </div>
             </div>
 
