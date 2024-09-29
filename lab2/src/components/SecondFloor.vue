@@ -9,8 +9,7 @@ const props = defineProps({
     topic: String,
     filterBy: String,
     isFilterClicked: Boolean,
-    filterClickOpen: Function,
-    filterClickClose: Function,
+    filterClickChange: Function,
     toRating: Function,
     toDate: Function,
     filterDecision: Function,
@@ -32,11 +31,11 @@ const props = defineProps({
             <div className="rating">
                 <span><img className="filter-img" src="../assets/filter.png" alt="filter"></span>
                 <span className="rating-word">{{filterBy}}</span>
-                <span><img @click="filterClickOpen()" className="img filter-btn-img" src="../assets/filter_btn.png" alt="filter_btn"></span>
+                <span><img @click="filterClickChange()" className="img filter-btn-img" src="../assets/filter_btn.png" alt="filter_btn"></span>
             </div>
             <div className="grid-container2">
-                <button v-if="isFilterClicked == true" @click="filterClickClose(), toRating(), filterDecision()" className="pickFilter">Rating</button>
-                <button v-if="isFilterClicked == true" @click="filterClickClose(), toDate(), filterDecision()" className="pickFilter">DateTime</button>
+                <button v-if="isFilterClicked == true" @click="filterClickChange(), toRating(), filterDecision()" className="pickFilter">Rating</button>
+                <button v-if="isFilterClicked == true" @click="filterClickChange(), toDate(), filterDecision()" className="pickFilter">DateTime</button>
             </div>
         </div>
         <div className="arrow">

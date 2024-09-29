@@ -238,30 +238,35 @@ function onlyAdventure(){
     perses.value = persons.value.filter(pers => pers.Topic == "Adventure")
     maxPage.value = Math.ceil(perses.value.length / 4)
     page.value = 1
+    filterBy.value = 'Filter By'
 }
 
 function onlyNature(){
     perses.value = persons.value.filter(pers => pers.Topic == "Nature")
     maxPage.value = Math.ceil(perses.value.length / 4)
     page.value = 1
+    filterBy.value = 'Filter By'
 }
 
 function onlyFashion(){
     perses.value = persons.value.filter(pers => pers.Topic == "Fashion")
     maxPage.value = Math.ceil(perses.value.length / 4)
     page.value = 1
+    filterBy.value = 'Filter By'
 }
 
 function onlyModern(){
     perses.value = persons.value.filter(pers => pers.Topic == "Modern")
     maxPage.value = Math.ceil(perses.value.length / 4)
     page.value = 1
+    filterBy.value = 'Filter By'
 }
 
 function onlyEducation(){
     perses.value = persons.value.filter(pers => pers.Topic == "Education")
     maxPage.value = Math.ceil(perses.value.length / 4)
     page.value = 1
+    filterBy.value = 'Filter By'
 }
 
 //Фильтрация по Рейтингу и Дате
@@ -269,12 +274,8 @@ const filterBy = ref('Filter By')
 
 const isFilterClicked = ref(false)
 
-function filterClickOpen(){
-    isFilterClicked.value = true;
-}
-
-function filterClickClose(){
-    isFilterClicked.value = false;
+function filterClickChange(){
+    isFilterClicked.value = !isFilterClicked.value;
 }
 
 function toRating(){
@@ -326,8 +327,7 @@ const sortedByDate = computed(() => _.sortBy(perses.value, 'PubDate').reverse())
             :nextPage="nextPage"
             :filterBy="filterBy"
             :isFilterClicked="isFilterClicked"
-            :filterClickOpen="filterClickOpen"
-            :filterClickClose="filterClickClose"
+            :filterClickChange="filterClickChange"
             :toRating="toRating"
             :toDate="toDate"
             :filterDecision="filterDecision"
