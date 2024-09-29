@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
     id: Number,
@@ -9,13 +9,23 @@ const props = defineProps({
     Rating: Number,
     Commentary: String,
     Topic: String,
-    today: Date
+    today: Date,
+    perses: Array,
+    filterDecision: Function,
 })
 
-// Увеличение рейтинга (макс. 15)
+// Увеличение рейтинга
 const rate = ref(props.Rating)
-function liked(){
+
+// Function to increase the rating
+function liked() {
+  // Find the person in the `perses` array based on the `id`
+  const person = props.perses.find(person => person.id === props.id)
+  if (person && person.Rating < 20) {
+    // Increment the local rate and update the corresponding person in `perses`
     rate.value += 1
+    person.Rating = rate.value
+  }
 }
 
 // Написание текста о дате в зависимости от разницы с сегодняшней датой
@@ -93,7 +103,7 @@ if (day.value == todayDay.value && month.value == todayMonth.value && year.value
         <div>{{ Commentary }}</div>
 
         <div className="btn">
-            <button className="like" @click="liked()">Like</button>
+            <button className="like" @click="liked(), filterDecision()">Like</button>
         </div>
 
     </div>

@@ -343,7 +343,9 @@ const sortedByDate = computed(() => _.sortBy(perses.value, 'PubDate').reverse())
                 :Rating="el.Rating"
                 :Commentary="el.Commentary"
                 :Topic="el.Topic"
-                :today="today"></Person>
+                :today="today"
+                :perses="perses"
+                :filterDecision="filterDecision"></Person>
 
             </div>
         </div>
