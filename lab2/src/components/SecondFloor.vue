@@ -30,13 +30,13 @@ const props = defineProps({
         </div>
         <div className="grid-container1">
             <div className="rating">
-                <span><img v-if="isFilterClicked == false" @click="filterDecision()" className="img filter-img" src="../assets/filter.png" alt="filter"></span>
+                <span><img className="filter-img" src="../assets/filter.png" alt="filter"></span>
                 <span className="rating-word">{{filterBy}}</span>
                 <span><img @click="filterClickOpen()" className="img filter-btn-img" src="../assets/filter_btn.png" alt="filter_btn"></span>
             </div>
             <div className="grid-container2">
-                <button v-if="isFilterClicked == true" @click="filterClickClose(), toRating()" className="pickFilter">Rating</button>
-                <button v-if="isFilterClicked == true" @click="filterClickClose(), toDate()" className="pickFilter">DateTime</button>
+                <button v-if="isFilterClicked == true" @click="filterClickClose(), toRating(), filterDecision()" className="pickFilter">Rating</button>
+                <button v-if="isFilterClicked == true" @click="filterClickClose(), toDate(), filterDecision()" className="pickFilter">DateTime</button>
             </div>
         </div>
         <div className="arrow">
@@ -47,6 +47,10 @@ const props = defineProps({
 </template>
 
 <style scoped>
+
+    .filter-btn-img{
+        float: right;
+    }
 
     button{
         border: none;
@@ -60,8 +64,11 @@ const props = defineProps({
     }
 
     .grid-container1{
+        width: 30%;
+        gap: 0.4em;
         height: 6em;
         display: grid;
+        justify-content:baseline;
         grid-template-columns: auto;
     }
 
@@ -94,10 +101,11 @@ const props = defineProps({
         font-size: 2.5em;
         background: #EEFCF7;
         align-content: center;
-        justify-content: baseline;
+        justify-content: space-between;
         padding: 0 0.3em;
         color:#1DE390;
         font-weight: bold;
+        height: 2em;
     }
 
     .rating-word{
@@ -106,7 +114,6 @@ const props = defineProps({
 
     .filter-img{
         width: 0.9em;
-        cursor: pointer;
     }
 
     .filter-btn-img{
